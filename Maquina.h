@@ -18,6 +18,8 @@ public:
     }
 
     void e0() {
+        char ver;
+        ver = txt[1];
         //logica para quando encontra um numero
         if (txt[posicao] >= '0' && txt[posicao] <= '9') {
             pilhaNumeros[posicaoPilhaNumero] = txt[posicao];
@@ -25,59 +27,63 @@ public:
             posicao++;
             e0();
             //logica para quando encontra um sinal inclusive ja se preocuando com a pilha
-        } else if(txt[posicao] == '+' || txt[posicao] == '-' ||
-        txt[posicao] == '*' || txt[posicao] == '/'){
-            if(posicaoPilhaSimbulo == 1 && (pilhaSimbulos[posicaoPilhaSimbulo] == '+' ||
-            pilhaSimbulos[posicaoPilhaSimbulo] == '-') && (txt[posicao] == '+' || txt[posicao] == '-')){
+        } else if (txt[posicao] == '+' || txt[posicao] == '-' ||
+                   txt[posicao] == '*' || txt[posicao] == '/') {
+            if (posicaoPilhaSimbulo == 1 && (pilhaSimbulos[posicaoPilhaSimbulo] == '+' ||
+                                             pilhaSimbulos[posicaoPilhaSimbulo] == '-') &&
+                (txt[posicao] == '+' || txt[posicao] == '-')) {
                 desempilha();
-            }
-            else if(posicaoPilhaSimbulo > 1){
+            } else if (posicaoPilhaSimbulo > 1) {
                 desempilha();
-            }
-            else{
+            } else {
                 pilhaSimbulos[posicaoPilhaSimbulo] = txt[posicao];
                 posicao++;
                 posicaoPilhaSimbulo++;
             }
-        }
-        //aqui vai ser para abrir um novo caso
-        else if(txt[posicao] == '('){
-//logica fodidinha
-        }
-        else{
-            cerr<<"rejeita"<<endl;
+
+        } else if (txt[posicao] == 0) {
+            desempilha();
             return;
         }
+            //aqui vai ser para abrir um novo caso
+        else if (txt[posicao] == '(') {
+        //logica fodidinha
+        } else if (txt[posicao] == ')') {
+            desempilha();
+        } else {
+            cerr << "rejeita" << endl;
+            return;
+        }
+        e0();
     }
-
 
 private:
 
-        void desempilha(){
-            if(pilhaSimbulos[posicaoPilhaSimbulo] == '+'){
-                printf("LDA %c\n"//numero aqui
-                       "ADD %c\n"//numero aqui
-                       "STA #%c\n");//numero mas vai ser algo como T1
-            }
-            else if(pilhaSimbulos[posicaoPilhaSimbulo] == '-'){
-                printf("LDA %c\n"//numero aqui
-                       "SUB %c\n"//numero aqui
-                       "STA #%c\n");//numero mas vai ser algo como T1
-            }
-            else if(pilhaSimbulos[posicaoPilhaSimbulo] == '*'){
-                printf("LDA %c\n"//numero aqui
-                       "MUL %c\n"//numero aqui
-                       "STA #%c\n");//numero mas vai ser algo como T1
-            }
-            else if(pilhaSimbulos[posicaoPilhaSimbulo] == '/'){
-                printf("LDA %c\n"//numero aqui
-                       "DIV %c\n"//numero aqui
-                       "STA #%c\n");//numero mas vai ser algo como T1
-            }
-            posicaoPilhaSimbulo--;
-            pilhaNumeros[0] = 'X';//a variavel gerada que por enquanto sera um X mas sera alterado no futuro
-            posicaoPilhaNumero = 1;
+    void desempilha(){
+        if(pilhaSimbulos[posicaoPilhaSimbulo] == '+'){
+            printf("LDA %c\n"//numero aqui
+                   "ADD %c\n"//numero aqui
+                   "STA #%c\n",'A','B','T');//numero mas vai ser algo como T1
         }
+        else if(pilhaSimbulos[posicaoPilhaSimbulo] == '-'){
+            printf("LDA %c\n"//numero aqui
+                   "SUB %c\n"//numero aqui
+                   "STA #%c\n",'A','B','T');//numero mas vai ser algo como T1
+        }
+        else if(pilhaSimbulos[posicaoPilhaSimbulo] == '*'){
+            printf("LDA %c\n"//numero aqui
+                   "MUL %c\n"//numero aqui
+                   "STA #%c\n",'A','B','T');//numero mas vai ser algo como T1
+        }
+        else if(pilhaSimbulos[posicaoPilhaSimbulo] == '/'){
+            printf("LDA %c\n"//numero aqui
+                   "DIV %c\n"//numero aqui
+                   "STA #%c\n",'A','B','T');//numero mas vai ser algo como T1
+        }
+        posicaoPilhaSimbulo--;
+        pilhaNumeros[0] = 'X';//a variavel gerada que por enquanto sera um X mas sera alterado no futuro
+        posicaoPilhaNumero = 1;
+    }
 
     char txt[200];
     int posicao = 0;
