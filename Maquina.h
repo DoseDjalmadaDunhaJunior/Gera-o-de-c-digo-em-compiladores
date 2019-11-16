@@ -54,7 +54,29 @@ public:
 private:
 
         void desempilha(){
-
+            if(pilhaSimbulos[posicaoPilhaSimbulo] == '+'){
+                printf("LDA %c\n"//numero aqui
+                       "ADD %c\n"//numero aqui
+                       "STA #%c\n");//numero mas vai ser algo como T1
+            }
+            else if(pilhaSimbulos[posicaoPilhaSimbulo] == '-'){
+                printf("LDA %c\n"//numero aqui
+                       "SUB %c\n"//numero aqui
+                       "STA #%c\n");//numero mas vai ser algo como T1
+            }
+            else if(pilhaSimbulos[posicaoPilhaSimbulo] == '*'){
+                printf("LDA %c\n"//numero aqui
+                       "MUL %c\n"//numero aqui
+                       "STA #%c\n");//numero mas vai ser algo como T1
+            }
+            else if(pilhaSimbulos[posicaoPilhaSimbulo] == '/'){
+                printf("LDA %c\n"//numero aqui
+                       "DIV %c\n"//numero aqui
+                       "STA #%c\n");//numero mas vai ser algo como T1
+            }
+            posicaoPilhaSimbulo--;
+            pilhaNumeros[0] = 'X';//a variavel gerada que por enquanto sera um X mas sera alterado no futuro
+            posicaoPilhaNumero = 1;
         }
 
     char txt[200];
