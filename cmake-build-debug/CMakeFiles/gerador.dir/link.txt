@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/gerador.dir/main.cpp.o CMakeFiles/gerador.dir/Maquina.cpp.o  -o gerador 
