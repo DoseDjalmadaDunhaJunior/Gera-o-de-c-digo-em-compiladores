@@ -47,7 +47,12 @@ public:
         }
             //aqui vai ser para abrir um novo caso
         else if (txt[posicao] == '(') {
-        //logica fodidinha
+            Maquina seg();
+            char u[200];
+            //aqui em baixo tem algo errado ainda
+            parcela(u);
+            cerr<<u<<endl;
+            //logica fodidinha
         } else if (txt[posicao] == ')') {
             desempilha();
         } else {
@@ -83,6 +88,17 @@ private:
         posicaoPilhaSimbulo--;
         pilhaNumeros[0] = 'X';//a variavel gerada que por enquanto sera um X mas sera alterado no futuro
         posicaoPilhaNumero = 1;
+    }
+
+    void parcela(char* copia){
+        if(txt[posicao] == '('){
+            int i;
+            for (i = posicao; (txt[i] != ')' && txt[i] != 0); i++) {
+                copia[i-posicao] = txt[i];
+            }
+            copia[i] = ')';
+            copia[i+1] = 0;
+        }
     }
 
     char txt[200];
