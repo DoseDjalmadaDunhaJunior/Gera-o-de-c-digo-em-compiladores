@@ -18,25 +18,45 @@ public:
     }
 
     void e0() {
+        //logica para quando encontra um numero
         if (txt[posicao] >= '0' && txt[posicao] <= '9') {
             pilhaNumeros[posicaoPilhaNumero] = txt[posicao];
             posicaoPilhaNumero++;
             posicao++;
             e0();
-        } else if(txt[posicao] == '+'){
-            if(posicaoPilhaSimbulo < 2){
-                if(posicaoPilhaSimbulo != 0){
-
-                }
-                else if(pilhaSimbulos[posicaoPilhaSimbulo] == '+' || pilhaSimbulos[posicaoPilhaSimbulo] == '-'){
-                    //empilha mais
-                }
+            //logica para quando encontra um sinal inclusive ja se preocuando com a pilha
+        } else if(txt[posicao] == '+' || txt[posicao] == '-' ||
+        txt[posicao] == '*' || txt[posicao] == '/'){
+            if(posicaoPilhaSimbulo == 1 && (pilhaSimbulos[posicaoPilhaSimbulo] == '+' ||
+            pilhaSimbulos[posicaoPilhaSimbulo] == '-') && (txt[posicao] == '+' || txt[posicao] == '-')){
+                desempilha();
             }
+            else if(posicaoPilhaSimbulo > 1){
+                desempilha();
+            }
+            else{
+                pilhaSimbulos[posicaoPilhaSimbulo] = txt[posicao];
+                posicao++;
+                posicaoPilhaSimbulo++;
+            }
+        }
+        //aqui vai ser para abrir um novo caso
+        else if(txt[posicao] == '('){
+//logica fodidinha
+        }
+        else{
+            cerr<<"rejeita"<<endl;
+            return;
         }
     }
 
 
 private:
+
+        void desempilha(){
+
+        }
+
     char txt[200];
     int posicao = 0;
     char pilhaSimbulos[10];
