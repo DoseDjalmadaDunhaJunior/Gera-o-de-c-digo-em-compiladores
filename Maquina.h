@@ -49,9 +49,7 @@ public:
         else if (txt[posicao] == '(') {
             Maquina seg();
             char u[200];
-            //aqui em baixo tem algo errado ainda
             parcela(u);
-            cerr<<u<<endl;
             //logica fodidinha
         } else if (txt[posicao] == ')') {
             desempilha();
@@ -91,14 +89,20 @@ private:
     }
 
     void parcela(char* copia){
+        char ver;
         if(txt[posicao] == '('){
-            int i;
+            int i,c = 0;
             for (i = posicao; (txt[i] != ')' && txt[i] != 0); i++) {
+                ver = txt[i];
                 copia[i-posicao] = txt[i];
+                c++;
             }
-            copia[i] = ')';
-            copia[i+1] = 0;
+            copia[i-posicao] = 0;
+            for (int j = 1; copia[i-1] != 0  ; j++) {
+                copia[j-1] = copia[j];
+            }
         }
+        cout<<copia<<endl;
     }
 
     char txt[200];

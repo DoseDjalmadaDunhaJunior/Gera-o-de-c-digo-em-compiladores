@@ -11,12 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2b73fdc-0a47-4749-82f9-3789076b802f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maquina.h" beforeDir="false" afterPath="$PROJECT_DIR$/Maquina.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gerador.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/gerador.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="c2b73fdc-0a47-4749-82f9-3789076b802f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
       <workItem from="1573865368220" duration="1002000" />
       <workItem from="1573917689214" duration="1176000" />
       <workItem from="1573929224714" duration="2261000" />
-      <workItem from="1573947691120" duration="686000" />
+      <workItem from="1573947691120" duration="752000" />
     </task>
     <task id="LOCAL-00001" summary="boa parte da logica para identificar ocorrencias esta pronto">
       <created>1573918851924</created>
@@ -97,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573931476564</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="quando tem chave &quot;(&quot; ainda sai errado">
+      <created>1573948433358</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1573948433358</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +122,7 @@
     <MESSAGE value="boa parte da logica para identificar ocorrencias esta pronto" />
     <MESSAGE value="boa parte da logica para desempilhar esta concluida" />
     <MESSAGE value="para casos suuuper simples esta funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="para casos suuuper simples esta funcionando" />
+    <MESSAGE value="quando tem chave &quot;(&quot; ainda sai errado" />
+    <option name="LAST_COMMIT_MESSAGE" value="quando tem chave &quot;(&quot; ainda sai errado" />
   </component>
 </project>
